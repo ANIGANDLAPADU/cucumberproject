@@ -1,0 +1,96 @@
+10:15:13.599 [main] INFO  stepDefinitions.steps - Provided Email 
+10:15:13.731 [main] INFO  stepDefinitions.steps - Provided Password 
+10:15:15.337 [main] INFO  stepDefinitions.steps - Clicked on Login button
+11:07:08.312 [main] INFO  stepDefinitions.steps - Provided Email 
+11:07:08.429 [main] INFO  stepDefinitions.steps - Provided Password 
+11:07:09.892 [main] INFO  stepDefinitions.steps - Clicked on Login button
+11:34:26.571 [main] INFO  stepDefinitions.steps - Provided Email 
+11:34:26.771 [main] INFO  stepDefinitions.steps - Provided Password 
+11:34:28.141 [main] INFO  stepDefinitions.steps - Clicked on Login button
+11:35:21.354 [main] INFO  stepDefinitions.steps - Provided Email 
+11:35:21.571 [main] INFO  stepDefinitions.steps - Provided Password 
+11:35:22.996 [main] INFO  stepDefinitions.steps - Clicked on Login button
+11:39:43.814 [main] INFO  stepDefinitions.steps - Provided Email 
+11:39:43.948 [main] INFO  stepDefinitions.steps - Provided Password 
+11:39:44.786 [main] INFO  stepDefinitions.steps - Clicked on Login button
+11:59:05.612 [main] INFO  stepDefinitions.steps - Provided Email
+11:59:05.713 [main] INFO  stepDefinitions.steps - Provided Password 
+11:59:07.052 [main] INFO  stepDefinitions.steps - Clicked on Login button
+12:02:05.388 [main] INFO  stepDefinitions.steps - Provided Email
+12:02:05.538 [main] INFO  stepDefinitions.steps - Provided Password 
+12:02:06.830 [main] INFO  stepDefinitions.steps - Clicked on Login button
+12:02:35.374 [main] INFO  stepDefinitions.steps - Provided Email
+12:02:35.466 [main] INFO  stepDefinitions.steps - Provided Password 
+12:02:36.516 [main] INFO  stepDefinitions.steps - Clicked on Login button
+12:05:39.792 [main] INFO  stepDefinitions.steps - Provided Email
+12:05:39.966 [main] INFO  stepDefinitions.steps - Provided Password 
+12:05:41.226 [main] INFO  stepDefinitions.steps - Clicked on Login button
+12:13:58.011 [main] INFO  stepDefinitions.steps - Provided Email
+12:13:58.161 [main] INFO  stepDefinitions.steps - Provided Password 
+12:13:59.359 [main] INFO  stepDefinitions.steps - Clicked on Login button
+12:21:31.038 [main] INFO  stepDefinitions.steps - Provided Email
+12:21:31.187 [main] INFO  stepDefinitions.steps - Provided Password 
+12:21:32.620 [main] INFO  stepDefinitions.steps - Clicked on Login button
+12:23:24.398 [main] INFO  stepDefinitions.steps - Provided Email
+12:23:24.538 [main] INFO  stepDefinitions.steps - Provided Password 
+12:23:25.780 [main] INFO  stepDefinitions.steps - Clicked on Login button
+12:23:57.718 [main] INFO  stepDefinitions.steps - Provided Email
+12:23:57.856 [main] INFO  stepDefinitions.steps - Provided Password 
+12:23:59.094 [main] INFO  stepDefinitions.steps - Clicked on Login button
+14:37:22.292 [main] INFO  stepDefinitions.steps - Provided Email
+14:37:22.465 [main] INFO  stepDefinitions.steps - Provided Password 
+14:37:23.875 [main] INFO  stepDefinitions.steps - Clicked on Login button
+14:37:31.550 [main] INFO  stepDefinitions.steps - Provided Email
+14:37:31.647 [main] INFO  stepDefinitions.steps - Provided Password 
+14:37:32.521 [main] INFO  stepDefinitions.steps - Clicked on Login button
+09:57:39.274 [main] INFO  stepDefinitions.steps - Provided Email
+09:57:39.425 [main] INFO  stepDefinitions.steps - Provided Password 
+09:57:40.670 [main] INFO  stepDefinitions.steps - Clicked on Login button
+10:02:09.282 [main] INFO  stepDefinitions.steps - Provided Email
+10:02:09.432 [main] INFO  stepDefinitions.steps - Provided Password 
+10:02:10.693 [main] INFO  stepDefinitions.steps - Clicked on Login button
+10:02:50.056 [main] INFO  stepDefinitions.steps - Provided Email
+10:02:50.197 [main] INFO  stepDefinitions.steps - Provided Password 
+10:02:51.451 [main] INFO  stepDefinitions.steps - Clicked on Login button
+12:08:41.878 [main] INFO  stepDefinitions.steps - Provided Email
+12:08:41.979 [main] INFO  stepDefinitions.steps - Provided Password 
+12:08:43.067 [main] INFO  stepDefinitions.steps - Clicked on Login button
+12:18:21.185 [main] INFO  stepDefinitions.steps - Provided Email
+12:18:21.344 [main] INFO  stepDefinitions.steps - Provided Password 
+12:18:22.584 [main] INFO  stepDefinitions.steps - Clicked on Login button
+13:45:08.664 [main] INFO  stepDefinitions.steps - Provided Email
+13:45:08.758 [main] INFO  stepDefinitions.steps - Provided Password 
+13:45:09.966 [main] INFO  stepDefinitions.steps - Clicked on Login button
+14:54:17.882 [main] INFO  stepDefinitions.steps - Provided Email
+14:54:18.157 [main] INFO  stepDefinitions.steps - Provided Password 
+14:54:19.341 [main] INFO  stepDefinitions.steps - Clicked on Login button
+09:32:54.092 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+09:32:54.229 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+09:32:55.607 [main] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+09:34:34.802 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+09:34:34.952 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+09:34:36.946 [main] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+09:34:42.415 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+09:34:42.519 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+09:34:43.610 [main] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+09:54:52.037 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+09:54:52.140 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+09:54:53.741 [main] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+09:55:23.227 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+09:55:23.383 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+09:55:24.459 [main] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+14:02:58.714 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+14:02:58.877 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+14:03:00.184 [main] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+14:03:40.444 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+14:03:40.592 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+14:03:41.818 [main] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+15:05:01.503 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+15:05:01.691 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+15:05:02.482 [main] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+15:06:23.574 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+15:06:23.677 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+15:06:24.322 [main] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+14:54:20.549 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+14:54:20.743 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+14:54:22.924 [main] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
