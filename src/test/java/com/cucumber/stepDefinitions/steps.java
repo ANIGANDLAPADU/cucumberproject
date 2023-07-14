@@ -12,7 +12,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import com.cucumber.pageObjects.HomePage;
 import com.cucumber.pageObjects.LoginPage;
 
 import io.cucumber.java.After;
@@ -24,7 +23,6 @@ import io.cucumber.java.en.When;
 
 public class steps {
 	WebDriver driver;
-	HomePage hp;
 	LoginPage lp;
 
 	Logger logger; // for logging

@@ -216,3 +216,9 @@
 10:51:15.603 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Email
 10:51:15.702 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
 10:51:17.804 [main] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+16:06:16.200 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+16:06:16.352 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+16:06:17.540 [main] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+16:06:25.442 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+16:06:25.556 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+16:06:26.724 [main] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
