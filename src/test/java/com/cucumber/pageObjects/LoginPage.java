@@ -1,6 +1,5 @@
 package com.cucumber.pageObjects;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,7 +18,8 @@ public class LoginPage extends BasePage {
 
 	@FindBy(xpath = "//input[@name='login']")
 	WebElement btnLogin;
-
+	@FindBy(xpath = "//td[@class='headings style12']//font//font")
+	WebElement display;
 
 	public void setEmail(String email) {
 		txtEmailAddress.sendKeys(email);
@@ -33,7 +33,10 @@ public class LoginPage extends BasePage {
 		btnLogin.click();
 	}
 
-	
+	public String getLoginMessage() {
+		String str = display.getText();
+		return str;
+		
+	}
 
 }
-

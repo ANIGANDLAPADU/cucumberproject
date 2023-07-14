@@ -14,28 +14,22 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.cucumber.pageObjects.HomePage;
 import com.cucumber.pageObjects.LoginPage;
-import com.cucumber.pageObjects.MyAccountPage;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class steps {
 	WebDriver driver;
 	HomePage hp;
 	LoginPage lp;
-	MyAccountPage macc;
 
-	/*
-	 * List<HashMap<String, String>> datamap; //Data driven
-	 */
 	Logger logger; // for logging
 	ResourceBundle rb; // for reading properties file
 	String br; // to store browser name
-	String name;// to store emailid
-	String pass;// to storepass
 	String appurl; // to storeurl of the application
 
 	@Before
@@ -46,15 +40,13 @@ public class steps {
 		// Reading config.properties (for browser)
 		rb = ResourceBundle.getBundle("dynamic");
 		br = rb.getString("browser");
-		name = rb.getString("email");
-		pass = rb.getString("password");
 		appurl = rb.getString("url");
 
 	}
 
 	@After
 	public void tearDown(Scenario scenario) {
-		System.out.println("Scenario status ======>" + scenario.getStatus());
+		System.out.println("Scenario status" + scenario.getStatus());
 		if (scenario.isFailed()) {
 
 			TakesScreenshot ts = (TakesScreenshot) driver;
@@ -83,74 +75,28 @@ public class steps {
 		driver.manage().window().maximize();
 	}
 
-	/*
-	 * @When("User navigate to MyAccount menu") public void
-	 * user_navigate_to_my_account() { hp=new HomePage(driver); hp.clickMyAccount();
-	 * logger.info("Clicked on My Account ");
-	 * 
-	 * }
-	 * 
-	 * @When("click on Login") public void click_on_login() { hp.clickLogin();
-	 * logger.info("Clicked on Login "); }
-	 */
-
 	@When("User enters Email as {string} and Password as {string}")
-	public void user_enters_email_as_and_password_as(String name, String pass) {
+	public void user_enters_email_as_and_password_as(String email, String pwd) {
 		lp = new LoginPage(driver);
 
-		lp.setEmail(name);
+		lp.setEmail(email);
 		logger.info("Provided Email");
-		lp.setPassword(pass);
+		lp.setPassword(pwd);
 		logger.info("Provided Password ");
 	}
 
-	@When("Click on Login button")
+	@Then("Click on Login button")
 	public void click_on_login_button() {
+
+		String expectedMessage = "Welcome to Admin";
 		lp.clickLogin();
 		logger.info("Clicked on Login button");
+		String actualMessage = lp.getLoginMessage();
+		if (actualMessage.equals(expectedMessage)) {
+			lp.getLoginMessage();
+			System.out.println("Login successful");
+		} else {
+			System.out.println("Login failed");
+		}
 	}
-
-	/*
-	 * @Then("User navigates to MyAccount Page") public void
-	 * user_navigates_to_my_account_page() { macc=new MyAccountPage(driver); boolean
-	 * targetpage=macc.isMyAccountPageExists();
-	 * 
-	 * if(targetpage) { logger.info("Login Success "); Assert.assertTrue(true); }
-	 * else { logger.error("Login Failed "); Assert.assertTrue(false); }
-	 * 
-	 * }
-	 */
-
-	// ******* Data Driven test method **************
-	/*
-	 * @Then("check User navigates to MyAccount Page by passing Email and Password with excel row {string}"
-	 * ) public void
-	 * check_user_navigates_to_my_account_page_by_passing_email_and_password_with_excel_data
-	 * (String rows) { datamap=DataReader.data(System.getProperty("user.dir")+
-	 * "\\testData\\Opencart_LoginData.xlsx", "Sheet1");
-	 * 
-	 * int index=Integer.parseInt(rows)-1; String email=
-	 * datamap.get(index).get("username"); String pwd=
-	 * datamap.get(index).get("password"); String exp_res=
-	 * datamap.get(index).get("res");
-	 * 
-	 * lp=new LoginPage(driver); lp.setEmail(email); lp.setPassword(pwd);
-	 * 
-	 * lp.clickLogin(); try { boolean targetpage=macc.isMyAccountPageExists();
-	 * 
-	 * if(exp_res.equals("Valid")) { if(targetpage==true) { MyAccountPage
-	 * myaccpage=new MyAccountPage(driver); myaccpage.clickLogout();
-	 * Assert.assertTrue(true); } else { Assert.assertTrue(false); } }
-	 * 
-	 * if(exp_res.equals("Invalid")) { if(targetpage==true) { macc.clickLogout();
-	 * Assert.assertTrue(false); } else { Assert.assertTrue(true); } }
-	 * 
-	 * 
-	 * } catch(Exception e) {
-	 * 
-	 * Assert.assertTrue(false); } driver.close(); }
-	 * 
-	 * //******* Account Registration Methods **************
-	 */
-
 }

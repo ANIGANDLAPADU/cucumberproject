@@ -11,4 +11,4 @@ Feature: Login Data Driven
     Examples: 
       | email                     | password |
       | Admin                     | Admin    |
-      | Admin                     | Admi     |
+      | Admin                     | Admin     |
