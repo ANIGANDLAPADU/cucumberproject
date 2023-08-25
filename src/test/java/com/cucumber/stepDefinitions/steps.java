@@ -30,7 +30,7 @@ public class steps {
 	String br; // to store browser name
 	String appurl; // to storeurl of the application
 
-	@Before
+	@Before(order=1)
 	public void setup() // Junit hook - executes once before starting
 	{
 		// for logging
