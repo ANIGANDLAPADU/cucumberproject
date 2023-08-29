@@ -261,3 +261,15 @@
 16:15:14.044 [pool-3-thread-1] INFO  com.cucumber.stepDefinitions.steps - Provided Email
 16:15:14.174 [pool-3-thread-1] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
 16:15:15.711 [pool-3-thread-1] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+12:08:12.204 [pool-3-thread-1] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+12:08:12.372 [pool-3-thread-1] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+12:08:13.926 [pool-3-thread-1] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+12:10:56.157 [pool-3-thread-1] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+12:10:56.302 [pool-3-thread-1] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+12:10:57.834 [pool-3-thread-1] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+10:52:31.647 [pool-3-thread-1] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+10:52:31.783 [pool-3-thread-1] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+10:52:33.162 [pool-3-thread-1] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+11:12:45.723 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+11:12:45.847 [main] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+11:12:48.113 [main] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
