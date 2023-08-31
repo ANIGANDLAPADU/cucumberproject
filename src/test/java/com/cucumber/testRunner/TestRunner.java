@@ -1,15 +1,16 @@
 package com.cucumber.testRunner;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import org.testng.annotations.DataProvider;
 
-@RunWith(Cucumber.class)
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+
+//@RunWith(Cucumber.class)
 @CucumberOptions(
 
 		// features = { "D:\\javaprojects\\cucumberproject\\Features\\LoginDTT.feature"
 		// },
-		features = { "D:\\javaprojects\\cucumberproject\\Features\\Login.feature" },
+		features = { "D:\\javaprojects\\cucumberproject\\Features" },
 		// features = "@target/rerun.txt", // it is used to run only failuer testcases
 		glue = "com.cucumber.stepDefinitions", plugin = { "pretty", "html:reports/myreport.html",
 				"json:reports/myreport.json", "rerun:target/rerun.txt"
@@ -17,6 +18,10 @@ import org.junit.runner.RunWith;
 		}, // Mandatory to capture failures
 		dryRun = false, monochrome = true, tags = "@sanity" // Scenarios tagged with @sanity,
 )
-public class TestRunner {
-
+public class TestRunner extends AbstractTestNGCucumberTests {
+	 @Override
+	    @DataProvider(parallel = true)
+	    public Object[][] scenarios() {
+	        return super.scenarios();
+	    }
 }

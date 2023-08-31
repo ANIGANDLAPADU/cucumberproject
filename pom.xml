@@ -26,8 +26,9 @@
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>3.0.0-M7</version>
 					<configuration>
+						<includes>**/*Runner.java</includes>
 						<parallel>methods</parallel>
-						<!--<useUnlimitedThreads>true</useUnlimitedThreads>-->
+						<useUnlimitedThreads>true</useUnlimitedThreads>
 						<threadCount>2</threadCount>
 					</configuration>
 				</plugin>
@@ -51,6 +52,12 @@
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
+			<version>7.13.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-testng</artifactId>
 			<version>7.13.0</version>
 		</dependency>
 
