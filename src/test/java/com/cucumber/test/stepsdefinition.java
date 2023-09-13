@@ -1,4 +1,4 @@
-package com.cucumber.stepDefinitions;
+package com.cucumber.test;
 
 import java.time.Duration;
 import java.util.ResourceBundle;
@@ -21,7 +21,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class steps {
+public class stepsdefinition {
 	WebDriver driver;
 	LoginPage lp;
 
