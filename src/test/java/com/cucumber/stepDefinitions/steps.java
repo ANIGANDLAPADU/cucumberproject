@@ -30,7 +30,7 @@ public class steps {
 	String br; // to store browser name
 	String appurl; // to storeurl of the application
 
-	@Before(order=-1)
+	@Before(order=0)
 	public void setup() // Junit hook - executes once before starting
 	{
 		// for logging
@@ -42,7 +42,7 @@ public class steps {
 
 	}
 
-	@After(order=2)
+	@After(order=1)
 	public void tearDown(Scenario scenario) {
 		System.out.println("Scenario status" + scenario.getStatus());
 		if (scenario.isFailed()) {

@@ -345,3 +345,9 @@
 10:25:18.165 [TestNG-PoolService-0] INFO  com.cucumber.test.stepsdefinition - Provided Password 
 10:25:19.483 [TestNG-PoolService-1] INFO  com.cucumber.test.stepsdefinition - Clicked on Login button
 10:25:19.526 [TestNG-PoolService-0] INFO  com.cucumber.test.stepsdefinition - Clicked on Login button
+11:08:21.084 [TestNG-PoolService-1] INFO  com.cucumber.test.stepsdefinition - Provided Email
+11:08:21.213 [TestNG-PoolService-0] INFO  com.cucumber.test.stepsdefinition - Provided Email
+11:08:21.295 [TestNG-PoolService-1] INFO  com.cucumber.test.stepsdefinition - Provided Password 
+11:08:21.381 [TestNG-PoolService-0] INFO  com.cucumber.test.stepsdefinition - Provided Password 
+11:08:23.397 [TestNG-PoolService-0] INFO  com.cucumber.test.stepsdefinition - Clicked on Login button
+11:08:24.548 [TestNG-PoolService-1] INFO  com.cucumber.test.stepsdefinition - Clicked on Login button
