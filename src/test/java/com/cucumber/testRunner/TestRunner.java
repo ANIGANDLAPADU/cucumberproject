@@ -9,21 +9,23 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
 
 		 features = { "D:\\javaprojects\\cucumberproject\\Features\\LoginDTT.feature"
-	     },
+		 },
+
 		/*
 		 * features = { "D:\\javaprojects\\cucumberproject\\Features\\login.feature" },
 		 */
+
 		// features = "@target/rerun.txt", // it is used to run only failuer testcases
-		glue = "com.cucumber.test", plugin = { "pretty", "html:reports/myreport.html",
+		glue = "com.cucumber.stepDefinitions", plugin = { "pretty", "html:reports/myreport.html",
 				"json:reports/myreport.json", "rerun:target/rerun.txt"
 
 		}, // Mandatory to capture failures
-		dryRun = false, monochrome = true, tags = "@sanity" // Scenarios tagged with @sanity,
+		dryRun = false, monochrome = true, tags = "@sanity"// Scenarios tagged with @sanity,
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
-	 @Override
-	    @DataProvider(parallel = true)
-	    public Object[][] scenarios() {
-	        return super.scenarios();
-	    }
+	@Override
+	@DataProvider(parallel = true)
+	public Object[][] scenarios() {
+		return super.scenarios();
+	}
 }

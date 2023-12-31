@@ -1,4 +1,4 @@
-com\cucumber\pageObjects\LoginPage.class
 com\cucumber\pageObjects\BasePage.class
-com\cucumber\stepDefinitions\steps.class
 com\cucumber\testRunner\TestRunner.class
+com\cucumber\pageObjects\LoginPage.class
+com\cucumber\stepDefinitions\steps.class
