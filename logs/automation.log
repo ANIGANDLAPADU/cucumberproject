@@ -408,3 +408,21 @@
 09:29:22.802 [TestNG-PoolService-1] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
 09:29:23.530 [TestNG-PoolService-0] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
 09:29:23.662 [TestNG-PoolService-1] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+14:56:32.077 [TestNG-PoolService-0] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+14:56:32.077 [TestNG-PoolService-1] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+14:56:32.225 [TestNG-PoolService-1] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+14:56:32.229 [TestNG-PoolService-0] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+14:56:33.169 [TestNG-PoolService-1] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+14:56:33.227 [TestNG-PoolService-0] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+14:58:27.083 [TestNG-PoolService-1] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+14:58:27.083 [TestNG-PoolService-0] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+14:58:27.257 [TestNG-PoolService-0] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+14:58:27.258 [TestNG-PoolService-1] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+14:58:28.330 [TestNG-PoolService-1] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+14:58:28.360 [TestNG-PoolService-0] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+14:59:02.660 [TestNG-PoolService-0] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+14:59:02.660 [TestNG-PoolService-1] INFO  com.cucumber.stepDefinitions.steps - Provided Email
+14:59:02.805 [TestNG-PoolService-0] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+14:59:02.812 [TestNG-PoolService-1] INFO  com.cucumber.stepDefinitions.steps - Provided Password 
+14:59:03.387 [TestNG-PoolService-1] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
+14:59:03.799 [TestNG-PoolService-0] INFO  com.cucumber.stepDefinitions.steps - Clicked on Login button
