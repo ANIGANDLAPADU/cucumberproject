@@ -1,3 +1,5 @@
+com\cucumber\test\BaseClass.class
+com\cucumber\test\stepsdefinition.class
 com\cucumber\pageObjects\BasePage.class
 com\cucumber\testRunner\TestRunner.class
 com\cucumber\pageObjects\LoginPage.class

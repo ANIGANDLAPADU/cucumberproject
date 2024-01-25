@@ -1,6 +1,7 @@
-package com.cucumber.stepDefinitions;
+package com.cucumber.datatable;
 
 import java.time.Duration;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
@@ -14,6 +15,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.cucumber.pageObjects.LoginPage;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -21,16 +23,16 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class steps {
-	WebDriver driver;
-	LoginPage lp;
+public class DataTableExample {
+	 WebDriver driver;
+	 LoginPage lp;
 
-	Logger logger; // for logging
-	ResourceBundle rb; // for reading properties file
-	String br; // to store browser name
-	String appurl; // to storeurl of the application
+	 Logger logger; // for logging
+     ResourceBundle rb; // for reading properties file
+	 String br; // to store browser name
+	 String appurl; // to storeurl of the application
 
-	@Before(order=3)
+	@Before(order = 1)
 	public void setup() // Junit hook - executes once before starting
 	{
 		// for logging
@@ -42,7 +44,7 @@ public class steps {
 
 	}
 
-	@After(order=4)
+	@After(order = 2)
 	public void tearDown(Scenario scenario) {
 		System.out.println("Scenario status" + scenario.getStatus());
 		if (scenario.isFailed()) {
@@ -52,49 +54,39 @@ public class steps {
 			scenario.attach(screenshot, "image/png", scenario.getName());
 
 		}
-		driver.quit();
+		driver.close();
 	}
 
-	@Given("User Launch browser")
-	public void user_launch_browser() {
+	@Given("User Open The browser")
+	public void user_open_the_browser() {
 		if (br.equals("chrome")) {
 			driver = new ChromeDriver();
-		} else if (br.equals("firefox")) {
-			driver = new FirefoxDriver();
 		} else if (br.equals("edge")) {
 			driver = new EdgeDriver();
+		} else if (br.equals("firefox")) {
+			driver = new FirefoxDriver();
 		}
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 
-	@Given("opens URL {string}")
-	public void opens_url(String appurl) {
+	@Given("User Enter URL as {string}")
+	public void user_enter_url_as(String appurl) {
 		driver.get(appurl);
-		driver.manage().window().maximize();
 	}
 
-	@When("User enters Email as {string} and Password as {string}")
-	public void user_enters_email_as_and_password_as(String email, String pwd) {
+	@When("User Enter Details")
+	public void user_enter_details(DataTable dataTable) {
+		Map<String, String> map = dataTable.asMap();
 		lp = new LoginPage(driver);
-
-		lp.setEmail(email);
-		logger.info("Provided Email");
-		lp.setPassword(pwd);
-		logger.info("Provided Password ");
+		lp.setEmail(map.get("Email"));
+		lp.setPassword(map.get("Password"));
 	}
 
-	@Then("Click on Login button")
-	public void click_on_login_button() {
-
-		String expectedMessage = "Welcome to Admin";
+	@Then("Click on Enter Button")
+	public void click_on_enter_button() {
+		lp = new LoginPage(driver);
 		lp.clickLogin();
-		logger.info("Clicked on Login button");
-		String actualMessage = lp.getLoginMessage();
-		if (actualMessage.equals(expectedMessage)) {
-			lp.getLoginMessage();
-			System.out.println("Login successful");
-		} else {
-			System.out.println("Login failed");
-		}
+
 	}
+
 }
