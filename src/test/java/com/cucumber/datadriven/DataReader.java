@@ -12,7 +12,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class DataReader {
 	
-	public static HashMap<String, String> storeValues = new HashMap();
 
 	public static List<HashMap<String, String>> data(String filepath, String sheetName) {
 		
@@ -23,11 +22,11 @@ public class DataReader {
 			XSSFWorkbook workbook = new XSSFWorkbook(fs);
 			XSSFSheet sheet = workbook.getSheet(sheetName);
 			Row HeaderRow = sheet.getRow(0);
-			for (int i = 1; i < sheet.getPhysicalNumberOfRows(); i++) 
+			for (int i = 1; i < sheet.getLastRowNum(); i++) 
 				{
 				Row currentRow = sheet.getRow(i);
 				HashMap<String, String> currentHash = new HashMap<String, String>();
-				for (int j = 0; j < currentRow.getPhysicalNumberOfCells(); j++) 
+				for (int j = 0; j < currentRow.getLastCellNum(); j++) 
 					{
 					Cell currentCell = currentRow.getCell(j);
 					switch (currentCell.getCellType()) 
