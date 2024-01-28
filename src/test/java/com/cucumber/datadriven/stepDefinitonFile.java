@@ -26,7 +26,7 @@ public class stepDefinitonFile {
 	public LoginPage lp;
 	public WebDriver driver;
 	Logger logger; // for logging
-	ResourceBundle rb; // for reading properties file
+	public ResourceBundle rb; // for reading properties file
 	String br; // to store browser name
 	String appurl;
 	List<HashMap<String, String>> datamap;

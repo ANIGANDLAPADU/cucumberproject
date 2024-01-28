@@ -1,19 +1,58 @@
 package com.cucumber.test;
 
 import java.time.Duration;
+import java.util.ResourceBundle;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.cucumber.pageObjects.LoginPage;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class stepsdefinition extends BaseClass {
+public class stepsdefinition  {
       public static LoginPage lp;
+      public static	WebDriver driver;
+      public static	Logger logger; // for logging
+      public static	ResourceBundle rb; // for reading properties file
+      public static	String br; // to store browser name
+      public static	String appurl; // to storeurl of the application
+
+      	@Before(order=1)
+      	public void setup() // Junit hook - executes once before starting
+      	{
+      		// for logging
+      		logger = LogManager.getLogger(this.getClass());
+      		// Reading config.properties (for browser)
+      		rb = ResourceBundle.getBundle("dynamic");
+      		br = rb.getString("browser");
+      		appurl = rb.getString("url");
+
+      	}
+
+      	@After(order=2)
+      	public void tearDown(Scenario scenario) {
+      		System.out.println("Scenario status" + scenario.getStatus());
+      		if (scenario.isFailed()) {
+
+      			TakesScreenshot ts = (TakesScreenshot) driver;
+      			byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
+      			scenario.attach(screenshot, "image/png", scenario.getName());
+
+      		}
+      		driver.quit();
+      	}
 	@Given("User Launch browser")
 	public void user_launch_browser() {
 		if (br.equals("chrome")) {

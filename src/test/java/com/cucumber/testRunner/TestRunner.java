@@ -16,11 +16,11 @@ import io.cucumber.testng.CucumberOptions;
 		 * features = {
 		 * "D:\\javaprojects\\cucumberproject\\Features\\UsingDataTable.feature" },
 		 */
-		features = { "D:\\javaprojects\\cucumberproject\\Features\\UsingExcel.feature" },
+		features = { "D:\\javaprojects\\cucumberproject\\Features\\Login.feature" },
 		// features = { "D:\\javaprojects\\cucumberproject\\Features\\login.feature" },
 
 		// features = "@target/rerun.txt", // it is used to run only failuer testcases
-		glue = "com.cucumber.datadriven", plugin = { "pretty", "html:reports/myreport.html",
+		glue = "com.cucumber.test", plugin = { "pretty", "html:reports/myreport.html",
 				"json:reports/myreport.json", "rerun:target/rerun.txt"
 
 		}, // Mandatory to capture failures
