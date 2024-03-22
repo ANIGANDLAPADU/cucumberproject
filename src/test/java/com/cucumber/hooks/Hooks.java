@@ -37,7 +37,7 @@ public class Hooks {
 		if (br.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
 		} else if (br.equalsIgnoreCase("edge")) {
-			driver = new FirefoxDriver();
+			driver = new EdgeDriver();
 		}
 		return driver;
 	}
