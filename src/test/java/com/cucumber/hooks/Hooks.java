@@ -9,6 +9,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.cucumber.pageObjects.LoginPage;
 
@@ -36,7 +37,7 @@ public class Hooks {
 		if (br.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
 		} else if (br.equalsIgnoreCase("edge")) {
-			driver = new EdgeDriver();
+			driver = new FirefoxDriver();
 		}
 		return driver;
 	}
