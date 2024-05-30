@@ -23,10 +23,11 @@ import io.cucumber.testng.CucumberOptions;
 
 		// features = "@target/rerun.txt", // it is used to run only failuer testcases
 		glue = "com.cucumber.datadriven", plugin = { "pretty", "html:reports/myreport.html",
-				"json:reports/myreport.json", "rerun:target/rerun.txt"
-
+				"json:reports/myreport.json", "rerun:target/rerun.txt",
+				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 		}, // Mandatory to capture failures
-		dryRun = false, monochrome = true, tags = "@sanity"// Scenarios tagged with @sanity,
+		dryRun = false, monochrome = true,
+		publish=true,tags = "@sanity"// Scenarios tagged with @sanity,
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 	@Override
