@@ -1,9 +1,13 @@
 package com.cucumber.datatable;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
@@ -17,6 +21,7 @@ import com.cucumber.pageObjects.LoginPage;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
@@ -24,13 +29,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class DataTableExample {
-	 WebDriver driver;
-	 LoginPage lp;
+	WebDriver driver;
+	LoginPage lp;
 
-	 Logger logger; // for logging
-     ResourceBundle rb; // for reading properties file
-	 String br; // to store browser name
-	 String appurl; // to storeurl of the application
+	Logger logger; // for logging
+	ResourceBundle rb; // for reading properties file
+	String br; // to store browser name
+	String appurl; // to storeurl of the application
 
 	@Before(order = 1)
 	public void setup() // Junit hook - executes once before starting
@@ -45,7 +50,13 @@ public class DataTableExample {
 	}
 
 	@After(order = 2)
-	public void tearDown(Scenario scenario) {
+	public void tearDown() {
+
+		driver.close();
+	}
+
+	@AfterStep
+	public void takeScreenShoot(Scenario scenario) {
 		System.out.println("Scenario status" + scenario.getStatus());
 		if (scenario.isFailed()) {
 
@@ -54,9 +65,7 @@ public class DataTableExample {
 			scenario.attach(screenshot, "image/png", scenario.getName());
 
 		}
-		driver.close();
 	}
-
 	@Given("User Open The browser")
 	public void user_open_the_browser() {
 		if (br.equals("chrome")) {

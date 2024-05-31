@@ -8,7 +8,6 @@ import java.util.ResourceBundle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,6 +17,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import com.cucumber.pageObjects.LoginPage;
 
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
@@ -46,15 +46,18 @@ public class stepDefinitonFile {
 
 	@After(order = 2)
 	public void tearDown(Scenario scenario) {
+		driver.quit();
+	}
+
+	@AfterStep
+	public void takeScreenShoot(Scenario scenario) {
 		System.out.println("Scenario status" + scenario.getStatus());
 		if (scenario.isFailed()) {
 
 			TakesScreenshot ts = (TakesScreenshot) driver;
 			byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
 			scenario.attach(screenshot, "image/png", scenario.getName());
-
 		}
-		driver.quit();
 	}
 
 	@Given("Open the browser and Enter URL as {string}")

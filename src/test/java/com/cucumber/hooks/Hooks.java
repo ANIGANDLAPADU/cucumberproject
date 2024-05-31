@@ -14,6 +14,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import com.cucumber.pageObjects.LoginPage;
 
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
@@ -43,7 +44,11 @@ public class Hooks {
 	}
 
 	@After(order = 2)
-	public void tearDown(Scenario scenario) {
+	public void tearDown() {
+		driver.quit();
+	}
+    @AfterStep
+	public void takeScreenShoot(Scenario scenario) {
 		System.out.println("Scenario status" + scenario.getStatus());
 		if (scenario.isFailed()) {
 
@@ -52,6 +57,5 @@ public class Hooks {
 			scenario.attach(screenshot, "image/png", scenario.getName());
 
 		}
-		driver.quit();
 	}
 }

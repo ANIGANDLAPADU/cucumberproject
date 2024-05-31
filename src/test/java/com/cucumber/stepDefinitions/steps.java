@@ -15,6 +15,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import com.cucumber.pageObjects.LoginPage;
 
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
@@ -30,7 +31,7 @@ public class steps {
 	String br; // to store browser name
 	String appurl; // to storeurl of the application
 
-	@Before(order=3)
+	@Before(order = 3)
 	public void setup() // Junit hook - executes once before starting
 	{
 		// for logging
@@ -42,8 +43,14 @@ public class steps {
 
 	}
 
-	@After(order=4)
-	public void tearDown(Scenario scenario) {
+	@After(order = 2)
+	public void tearDown() {
+
+		driver.close();
+	}
+
+	@AfterStep
+	public void takeScreenShoot(Scenario scenario) {
 		System.out.println("Scenario status" + scenario.getStatus());
 		if (scenario.isFailed()) {
 
@@ -52,7 +59,6 @@ public class steps {
 			scenario.attach(screenshot, "image/png", scenario.getName());
 
 		}
-		driver.quit();
 	}
 
 	@Given("User Launch browser")

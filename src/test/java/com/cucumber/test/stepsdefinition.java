@@ -15,44 +15,51 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import com.cucumber.pageObjects.LoginPage;
 
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class stepsdefinition  {
-      public static LoginPage lp;
-      public static	WebDriver driver;
-      public static	Logger logger; // for logging
-      public static	ResourceBundle rb; // for reading properties file
-      public static	String br; // to store browser name
-      public static	String appurl; // to storeurl of the application
+public class stepsdefinition {
+	public static LoginPage lp;
+	public static WebDriver driver;
+	public static Logger logger; // for logging
+	public static ResourceBundle rb; // for reading properties file
+	public static String br; // to store browser name
+	public static String appurl; // to storeurl of the application
 
-      	@Before(order=1)
-      	public void setup() // Junit hook - executes once before starting
-      	{
-      		// for logging
-      		logger = LogManager.getLogger(this.getClass());
-      		// Reading config.properties (for browser)
-      		rb = ResourceBundle.getBundle("dynamic");
-      		br = rb.getString("browser");
-      		appurl = rb.getString("url");
+	@Before(order = 1)
+	public void setup() // Junit hook - executes once before starting
+	{
+		// for logging
+		logger = LogManager.getLogger(this.getClass());
+		// Reading config.properties (for browser)
+		rb = ResourceBundle.getBundle("dynamic");
+		br = rb.getString("browser");
+		appurl = rb.getString("url");
 
-      	}
+	}
 
-      	@After(order=2)
-      	public void tearDown(Scenario scenario) {
-      		System.out.println("Scenario status" + scenario.getStatus());
-      		if (scenario.isFailed()) {
+	@After(order = 2)
+	public void tearDown() {
 
-      			TakesScreenshot ts = (TakesScreenshot) driver;
-      			byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
-      			scenario.attach(screenshot, "image/png", scenario.getName());
+		driver.close();
+	}
 
-      		}
-      		driver.quit();
-      	}
+	@AfterStep
+	public void takeScreenShoot(Scenario scenario) {
+		System.out.println("Scenario status" + scenario.getStatus());
+		if (scenario.isFailed()) {
+
+			TakesScreenshot ts = (TakesScreenshot) driver;
+			byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
+			scenario.attach(screenshot, "image/png", scenario.getName());
+
+		}
+	}
+
 	@Given("User Launch browser")
 	public void user_launch_browser() {
 		if (br.equals("chrome")) {
