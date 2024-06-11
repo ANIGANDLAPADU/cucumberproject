@@ -1,38 +1,25 @@
 package com.cucumber.testRunner;
 
-import org.testng.annotations.DataProvider;
-import io.cucumber.testng.AbstractTestNGCucumberTests;
-import io.cucumber.testng.CucumberOptions;
+import org.junit.runner.RunWith;
 
-//@RunWith(Cucumber.class)
-@CucumberOptions(
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 
-		/*
-		 * features = { "D:\\projects\\cucumberproject\\Features\\UsingExcel.feature" },
-		 */
-		 
-		
-		  features = {
-		  "D:\\projects\\cucumberproject\\Features\\UsingDataTable.feature" },
-		 
-		 
-		/*
-		 * features = { "D:\\javaprojects\\cucumberproject\\Features\\Login.feature" },
-		 */
-		// features = { "D:\\javaprojects\\cucumberproject\\Features\\login.feature" },
+@RunWith(Cucumber.class)
+@CucumberOptions(features = { "D:\\projects\\cucumberproject\\Features" },
 
 		// features = "@target/rerun.txt", // it is used to run only failuer testcases
-		glue = "com.cucumber.datatable", plugin = { "pretty", "html:reports/myreport.html",
+		glue = { "com.cucumber.stepDefinitions" }, plugin = { "pretty", "html:reports/myreport.html",
 				"json:reports/myreport.json", "rerun:target/rerun.txt",
-				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
-		}, // Mandatory to capture failures
-		dryRun = false, monochrome = true,
-		publish=true,tags = "@sanity"// Scenarios tagged with @sanity,
+				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, // Mandatory to capture
+																							// failures
+		dryRun = false, monochrome = true, publish = true, tags = "@sanity"// Scenarios tagged with @sanity,
 )
-public class TestRunner extends AbstractTestNGCucumberTests {
-	@Override
-	@DataProvider(parallel = true)
-	public Object[][] scenarios() {
-		return super.scenarios();
-	}
+public class TestRunner {
+	/*
+	 * @Override
+	 * 
+	 * @DataProvider(parallel = true) public Object[][] scenarios() { return
+	 * super.scenarios(); }
+	 */
 }
