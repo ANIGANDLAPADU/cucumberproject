@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -27,9 +26,8 @@ public class DataReader {
 				HashMap<String, String> currentHash = new HashMap<String, String>();
 				for (int j = 0; j < currentRow.getLastCellNum(); j++) {
 					Cell currentCell = currentRow.getCell(j);
-					if (currentCell.getCellType() == CellType.STRING) {
-						currentHash.put(HeaderRow.getCell(j).getStringCellValue(), currentCell.getStringCellValue());
-					}
+			
+						currentHash.put(HeaderRow.getCell(j).toString(), currentCell.toString());
 				}
 				mydata.add(currentHash);
 			}

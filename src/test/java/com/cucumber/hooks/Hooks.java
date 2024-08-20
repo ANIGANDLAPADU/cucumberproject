@@ -24,7 +24,7 @@ public class Hooks {
 	public ResourceBundle rb; // for reading properties file
 	String br; // to store browser name
 	String appurl;
-	public WebDriver driver;
+	protected WebDriver driver;
 
 	@Before(order = 1)
 	public WebDriver setup() // Junit hook - executes once before starting
@@ -58,4 +58,7 @@ public class Hooks {
 
 		}
 	}
+    public WebDriver getDriver() {
+    	return driver;
+    }
 }

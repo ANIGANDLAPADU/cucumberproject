@@ -6,10 +6,10 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = { "D:\\projects\\cucumberproject\\Features" },
+@CucumberOptions(features = { "D:\\projects\\cucumberproject\\Features\\UsingExcel.feature" },
 
 		// features = "@target/rerun.txt", // it is used to run only failuer testcases
-		glue = { "com.cucumber.stepDefinitions" }, plugin = { "pretty", "html:reports/myreport.html",
+		glue = { "com.cucumber.datadriven" }, plugin = { "pretty", "html:reports/myreport.html",
 				"json:reports/myreport.json", "rerun:target/rerun.txt",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, // Mandatory to capture
 																							// failures
